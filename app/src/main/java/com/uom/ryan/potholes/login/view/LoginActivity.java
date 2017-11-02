@@ -16,11 +16,18 @@ import android.widget.Toast;
 
 import com.uom.ryan.potholes.R;
 
+import butterknife.BindView;
+
 public class LoginActivity extends AppCompatActivity
         implements View.OnClickListener {
 
+    @BindView(R.id.btnSignIn)
     Button buttonSignIn;
+
+    @BindView(R.id.emailEditText)
     EditText emailEditText;
+
+    @BindView(R.id.passwordEditText)
     EditText passwordEditText;
 
     @Override
@@ -29,11 +36,7 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setContentView(R.layout.activity_login_main);
-
         setSupportActionBar(toolbar);
-        buttonSignIn = (Button) findViewById(R.id.btnSignIn);
-        emailEditText = (EditText) findViewById(R.id.emailEditText);
-        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
     }
 
     @Override
