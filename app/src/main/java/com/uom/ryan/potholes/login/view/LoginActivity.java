@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.uom.ryan.potholes.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity
         implements View.OnClickListener {
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setContentView(R.layout.activity_login_main);
         setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
     }
 
     @Override
