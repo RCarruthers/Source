@@ -1,8 +1,7 @@
 package com.uom.ryan.potholes.login.view;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -15,21 +14,29 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.uom.ryan.potholes.R;
+import com.uom.ryan.potholes.application.view.SourceActivity;
+import com.uom.ryan.potholes.login.presenter.LoginPresenter;
+import com.uom.ryan.potholes.login.presenter.LoginPresenterImpl;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity
-        implements View.OnClickListener {
+        implements View.OnClickListener, LoginView {
 
     @BindView(R.id.btnSignIn)
     Button buttonSignIn;
+
+    @BindView(R.id.btnRegister)
+    Button buttonRegister;
 
     @BindView(R.id.emailEditText)
     EditText emailEditText;
 
     @BindView(R.id.passwordEditText)
     EditText passwordEditText;
+
+    private LoginPresenter loginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +46,20 @@ public class LoginActivity extends AppCompatActivity
         setContentView(R.layout.activity_login_main);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
-    }
+        loginPresenter = new LoginPresenterImpl(this);
+        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleLoginButtonClicked();
+            }
+        });
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleRegisterButtonClicked();
+            }
+        });
     }
 
     @Override
@@ -75,21 +86,40 @@ public class LoginActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
+        Toast.makeText(this, "Button clicked.", Toast.LENGTH_LONG).show();
         if(v == buttonSignIn)
-            handleLogin();
+            handleLoginButtonClicked();
+        else if(v == buttonRegister)
+            handleRegisterButtonClicked();
     }
 
 
-    public void handleLogin() {
+    public void handleLoginButtonClicked() {
         String emailText = emailEditText.getText().toString().trim();
         String passwordText = passwordEditText.getText().toString().trim();
 
         if((!TextUtils.isEmpty(emailText)) && (!TextUtils.isEmpty(passwordText))) {
-            // Initiate log-in
+            loginPresenter.handleLogin(emailText, passwordText);
         } else {
-            Toast.makeText(this, "Please enter both your email dadress and password.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter both your email address and password.", Toast.LENGTH_LONG).show();
             return;
         }
+    }
 
+    public void handleRegisterButtonClicked() {
+        String emailText = emailEditText.getText().toString().trim();
+        String passwordText = passwordEditText.getText().toString().trim();
+
+        if((!TextUtils.isEmpty(emailText)) && (!TextUtils.isEmpty(passwordText))) {
+            loginPresenter.handleRegister(emailText, passwordText);
+        } else {
+            Toast.makeText(this, "Please enter both your email address and password.", Toast.LENGTH_LONG).show();
+            return;
+        }
+    }
+
+    public void navigateToSourceActivity() {
+        Intent intent = new Intent(getBaseContext(), SourceActivity.class);
+        startActivity(intent);
     }
 }

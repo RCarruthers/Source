@@ -10,6 +10,7 @@ buildscript {
         // NOTE: Do not place your com.uom.ryan.potholes.application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.google.gms:google-services:3.0.0'
     }
 }
 
