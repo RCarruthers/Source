@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "967165282094",
+    "firebase_url": "https://source-286fb.firebaseio.com",
+    "project_id": "source-286fb",
+    "storage_bucket": "source-286fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967165282094:android:7fe9d17abb00846d",
+        "android_client_info": {
+          "package_name": "com.uom.ryan.potholes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967165282094-2ckvfimf3lq273k368vvvo8llhtj6knp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uom.ryan.potholes",
+            "certificate_hash": "b57a4cb346c25a8b3612a30dd31059cd606cd847"
+          }
+        },
+        {
+          "client_id": "967165282094-29shq9eml11g338cmva6l8q8pab8rf45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKOASIlRPIGAndqleKJeN9M3MJvwXOBHc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967165282094-29shq9eml11g338cmva6l8q8pab8rf45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

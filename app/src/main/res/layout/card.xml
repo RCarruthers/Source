@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:map="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:elevation="3dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="4dp"
+        card_view:cardCornerRadius="1dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+                android:id="@+id/card_map"
+                map:liteMode="true"
+                android:clickable="false"></com.google.android.gms.maps.MapView>
+
+            <TextView
+                android:id="@+id/card_lat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:paddingLeft="5dp"
+                android:paddingRight="100dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:text="Lat"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/card_lon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:paddingLeft="5dp"
+                android:paddingRight="100dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:text="Lon"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/card_sev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:text="Severity"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:typeface="sans" />
+
+            <LinearLayout
+                android:id="@+id/descriptionLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Add a description to your report..."
+                    android:paddingLeft="5dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="16dp"
+                    android:imeOptions="actionDone"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -7,5 +7,5 @@ package com.uom.ryan.potholes.login.presenter;
 public interface LoginPresenter {
     void handleLogin(String email, String password);
     void handleRegister(String email, String password);
-
+    void checkLoginStatus();
 }

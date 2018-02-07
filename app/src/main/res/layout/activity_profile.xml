@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="25dp"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:text="My Profile"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0.05"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="25dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/dynamic_spinner"
+            android:layout_weight="0.00"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:text="Display Name"
+            android:textAlignment="viewStart"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/profileEditTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/dynamic_spinner"
+            android:layout_weight="0.00"
+            android:editable="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:text="CruddyR"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:inputType="text"
+            tools:text="CruddyR" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0.05"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="25dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/TextViuewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/dynamic_spinner"
+            android:layout_weight="0.00"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:text="Email address"
+            android:textAlignment="viewStart"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/profileEditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/dynamic_spinner"
+            android:layout_weight="0.00"
+            android:editable="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:text="cruddyr@live.co.uk"
+            android:textAlignment="viewStart"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:inputType="text"
+            tools:text="cruddyr@live.co.uk" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0.10"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="25dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/dynamic_spinner"
+            android:layout_weight="0.00"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:text="Report type"
+            android:textAlignment="viewStart"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/dynamic_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:defaultValue="-1"
+            android:entries="@array/pref_report_type_titles"
+            android:entryValues="@array/pref_example_list_values"
+            android:key="example_list" />
+
+    </LinearLayout>
+
+</LinearLayout>

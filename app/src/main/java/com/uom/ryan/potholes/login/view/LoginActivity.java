@@ -21,6 +21,8 @@ import com.uom.ryan.potholes.login.presenter.LoginPresenterImpl;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.uom.ryan.potholes.util.Constants.TOAST_BLANK_EMAIL_PASSWORD;
+
 public class LoginActivity extends AppCompatActivity
         implements View.OnClickListener, LoginView {
 
@@ -47,6 +49,7 @@ public class LoginActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
         loginPresenter = new LoginPresenterImpl(this);
+        loginPresenter.checkLoginStatus();
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +89,6 @@ public class LoginActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "Button clicked.", Toast.LENGTH_LONG).show();
         if(v == buttonSignIn)
             handleLoginButtonClicked();
         else if(v == buttonRegister)
@@ -101,7 +103,7 @@ public class LoginActivity extends AppCompatActivity
         if((!TextUtils.isEmpty(emailText)) && (!TextUtils.isEmpty(passwordText))) {
             loginPresenter.handleLogin(emailText, passwordText);
         } else {
-            Toast.makeText(this, "Please enter both your email address and password.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, TOAST_BLANK_EMAIL_PASSWORD, Toast.LENGTH_LONG).show();
             return;
         }
     }
@@ -113,7 +115,7 @@ public class LoginActivity extends AppCompatActivity
         if((!TextUtils.isEmpty(emailText)) && (!TextUtils.isEmpty(passwordText))) {
             loginPresenter.handleRegister(emailText, passwordText);
         } else {
-            Toast.makeText(this, "Please enter both your email address and password.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, TOAST_BLANK_EMAIL_PASSWORD, Toast.LENGTH_LONG).show();
             return;
         }
     }
